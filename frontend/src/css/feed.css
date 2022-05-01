@@ -1,0 +1,11 @@
+.feed{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.center {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
