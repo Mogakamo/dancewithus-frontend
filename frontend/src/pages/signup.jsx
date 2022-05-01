@@ -20,6 +20,7 @@ function Signup(){
                 if (res.data["status"] === 1){
                 localStorage.setItem("userEmail",email)
                 localStorage.setItem("userPassword",psw)
+                console.log(res.data)
             }else{
                 console.log(res.data["userDetails"])
             }})

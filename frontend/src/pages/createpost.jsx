@@ -3,13 +3,24 @@ import { Form, Button } from 'react-bootstrap';
 import "bootstrap/dist/css/bootstrap.min.css"
 import "../css/custom.css"
 import { useState } from "react";
+import axios from "axios";
 function Createpost(){
 
     const[url, setUrl] = useState("")
     const[cap, setCap] = useState("")
 
     const submitForm = ()=> {
+        var email = localStorage.getItem("userEmail")
         console.log(url, cap)
+        axios.post("http://localhost:5000/createpost",{
+            userEmail : email,
+            postURL : url,
+            postCaption : cap,
+            auth_key : "nl69RtgOBWM986YRy9bs"
+        })
+        .then(res => {
+            console.log(res.data)
+        })
     }
     return (
         <div className='center'>
